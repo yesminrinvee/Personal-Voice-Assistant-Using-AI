@@ -10,3 +10,11 @@ import datetime
 import multiprocessing
 import playsound
 from gtts import gTTS
+
+def talk(words):
+    if words != '':
+        tts = gTTS(words, lang='en')
+        filename = 'voice.mp3'
+        tts.save(filename)
+        playsound.playsound(filename)
+        os.remove(filename)
