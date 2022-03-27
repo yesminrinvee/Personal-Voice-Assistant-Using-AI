@@ -11,6 +11,7 @@ import multiprocessing
 import playsound
 from gtts import gTTS
 
+
 def talk(words):
     if words != '':
         tts = gTTS(words, lang='en')
@@ -18,3 +19,4 @@ def talk(words):
         tts.save(filename)
         playsound.playsound(filename)
         os.remove(filename)
+
